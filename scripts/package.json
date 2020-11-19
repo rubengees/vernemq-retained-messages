@@ -1,0 +1,13 @@
+{
+  "name": "vernemq-retained-messages",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "subscribe": "node subscribe.js",
+    "publish": "node publish.js"
+  },
+  "dependencies": {
+    "mqtt": "^4.2.5"
+  }
+}

@@ -1,0 +1,27 @@
+replicaCount: 2
+
+statefulset:
+  startupProbe:
+    httpGet:
+      path: /health
+      port: 8888
+    failureThreshold: 60
+    periodSeconds: 3
+  livenessProbe:
+    initialDelaySeconds: 0
+  readinessProbe:
+    initialDelaySeconds: 0
+
+additionalEnv:
+  - name: DOCKER_VERNEMQ_ACCEPT_EULA
+    value: "yes"
+  - name: DOCKER_VERNEMQ_ALLOW_REGISTER_DURING_NETSPLIT
+    value: "on"
+  - name: DOCKER_VERNEMQ_ALLOW_PUBLISH_DURING_NETSPLIT
+    value: "on"
+  - name: DOCKER_VERNEMQ_ALLOW_SUBSCRIBE_DURING_NETSPLIT
+    value: "on"
+  - name: DOCKER_VERNEMQ_ALLOW_UNSUBSCRIBE_DURING_NETSPLIT
+    value: "on"
+  - name: DOCKER_VERNEMQ_ALLOW_ANONYMOUS
+    value: "on"
